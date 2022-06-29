@@ -1,0 +1,22 @@
+beforeExit :
+    Node.js 이벤트 루프 비움 + 예약할 추가 작업 X -> 발생
+    일반적으로는 예정된 작업 X -> 종료
+    beforeExit 이벤트에 등록된 리스너의 비동기식(논블로킹) 호출 -> Node.js 프로세스 계속
+exit :
+    process.exit() 호출 or Node.js 이벤트 루프의 수행할 추가 작업 X -> 발생
+    이벤트 루프의 종료 막기 불가
+    exit 이벤트 등록된 리스너의 실행 종료 -> Node.js 프로세스 종료
+disconnect :
+    Node.js 프로세스의 IPC 채널 생성 - IPC 채널이 닫히는 경우 이벤트 발생
+    * IPC 채널 : 클러스터로 자식 프로세스를 생성
+message :
+    Node.js 프로세스의 IPC 채널 생성
+        childprocess.send() 사용 -> 상위 프로세스가 보낸 메시지의 하위 메시지 수신 시 발생
+
+그 외 :
+    nultipleResolve
+    rejectHandled
+    uncaughtException
+    uncaughtExceptionMonitor
+    unhandledRejection
+    warning 등
