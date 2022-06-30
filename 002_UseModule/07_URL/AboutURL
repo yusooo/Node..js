@@ -1,0 +1,5 @@
+URL 모듈은 두 개의 API 제공 :
+
+1.  Node.js 전용 레거시 API
+2.  웹 브라우저와 동일한 WHATWG URL 표준 구현 최신 URL
+    2-1. WHATWG : 웹 표준 정의 단체의 이름
