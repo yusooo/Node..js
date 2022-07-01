@@ -16,3 +16,9 @@ app.listen(3000, () => {
 
 app.use("/customer", customerRoute); // customer 라우트를 추가하고 기본 경로로 /customer 사용
 app.use("/product", productRoute); // product 라우트를 추가하고 기본 경로로 /product 사용
+
+/*
+  라우트 모듈 분리 -> 라우트의 기능별 관리 가능
+    각각의 개발자가 기능별로 분리된 라우트 파일의 각자 관리, 업무의 명확한 구분
+    운영 및 유지보수 측면에서 관리 용이
+*/
