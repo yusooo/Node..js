@@ -1,0 +1,33 @@
+Json server
+프론트 & 백 모두 사용 가능
+1. 프론트
+    웹 서버 구축이 아직 되지 않았을 때 프론트엔드 개발을 진행하도록 도움
+2. 백
+3. 기타
+    아이디어 검증을 위한 빠른 프로토타이핑의 진행에 유용
+
+API : Application Programming Interface 
+    애플리케이션의 구축 및 통합을 위한 프로토콜 세트
+
+    A. REST API
+        REST : Representational State Transfer
+        자원을 이름으로 구분 -> 해당 자원의 상태를 주고받는 모든 것
+            상태 : 전송되는 데이터 / 일반적으로 JSON 형태로 데이터의 교환
+        기본적으로 웹의 기존 기술 & HTTP 프로토콜을 그대로 사용 -> 웹의 장점을 최대한 활용할 수 있는 아키텍처
+        네트워크 상에서 클라이언트와 서버 사이 데이터 통신을 위해 가장 많이 사용되는 통신 방식 중 하나
+        
+        HTTP URI (Uniform Resource Identifier)를 통해 자원Resource 명시
+        -> HTTP Method (POST, GET, PUT, DELETE)를 통해 해당 자원에 대한 CRUD 수행
+            HTTP Method : POST(생성), GET(조회), PUT(수정), DELETE(삭제)
+            CRUD : Create(생성), Read(조회), Update(수정), Delete(삭제)
+        
+        웹에서는 일반적으로 서버가 구현해 놓은 REST API를 클라이언트가 호출
+        -> 데이터 전송, 조회, 수정, 삭제 등의 기능을 서버에 요청할 수 있도록 함
+
+        REST API의 정의 = HTTP + JSON 형태 => 플랫폼 / 언어에 종속 X
+        HTTP와 JSON을 사용할 수 있는 모든 플랫폼에서 사용 가능
+
+
+        json-server --watch db.json 명령 터미널에 입력
+        -> 각각의 리소스는 db.json에 저장한 JSON 데이터의 세 개의 키와 대응
+        각각의 리소스 URI 호출 -> 조회 / 생성 / 수정 / 삭제 실행가능
