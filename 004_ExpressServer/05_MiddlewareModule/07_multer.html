@@ -1,0 +1,18 @@
+// multer.html 이름으로 html 파일 생성 & Node.js 서버로 파일 업로드 html 코드
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      action="http://localhost:5500/profile"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="file" name="avatar" />
+      <input type="submit" value="업로드" />
+    </form>
+  </body>
+</html>
