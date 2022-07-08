@@ -1,7 +1,5 @@
 // 라우트 에러 발생 -> 익스프레스 자동 처리 & 에러 코드 및 에러 정보 클라이언트로 응답
 
-const { appendFile } = require("fs");
-
 app.get("/error", function (req, res) {
   throw new Error("에러 발생"); // 라우트 에러 발생 -> 익스프레스 자동 처리
   // 클라이언트 : 500 에러코드 & 에러 정보 전달
