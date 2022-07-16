@@ -7,3 +7,5 @@ app.get("/", function (req, res) {
 app.get("/about", function (req, res) {
   res.send("about"); // 클라이언트에 about 문자열 전송
 });
+
+// Postman과 VSCode를 연결해둘 것!!
