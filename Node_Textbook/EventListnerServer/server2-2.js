@@ -1,5 +1,5 @@
 const http = require('http');
-const http = requird('fs').prommise; // fs 모듈로 HTML 파일을 읽고 전송
+const http = require('fs').promises; // fs 모듈로 HTML 파일을 읽고 전송
 
 http.createServer(async (req, res)=>{
     try{
