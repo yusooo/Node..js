@@ -22,7 +22,7 @@ http.createServer(async(req, res)=>{
         const expires = new Date();
         expires.setMinutes(expires.getMinutes() + 5);
         const uniqueInt = Date.now();
-        session[uniqueInt] = {
+        session[uniqueInt] = {  // session 객체에 사용자명과 만료시간 대신 저장 (실제 서버에서는 변수에 저장 X => Redis나 Memcached 등의 DB에 저장)
             name,
             expires,
         };
