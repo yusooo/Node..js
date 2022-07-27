@@ -1,3 +1,11 @@
 `   npm : Node Package Manager
 `   npm에 업로드된 노드 모듈 : 패키지
 `   `   의존 관계 : 패키지가 타 패키지 이용 / 모듈이 타 모듈 사용 등
+`   `   다수의 모듈 설치 시 : npm install [Package1] [Package2] ...
+`   `   개발용 패키지 설치 : npm install --save-dev [Package]
+`   `   전역 설치 : npm install --global [Package] 
+`   `   `   전역 설치 시 Package.json에 기록 X -> 재설치 시 어려움 => npm install --save-dev [Package] \n npx [Package] [Location]
+`   `   줄임말 사용
+`   `   `   install : i
+`   `   `   --save-dev : -D
+`   `   `   --global : -g
