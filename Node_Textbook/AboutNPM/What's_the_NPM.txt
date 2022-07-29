@@ -9,3 +9,15 @@
 `   `   `   install : i
 `   `   `   --save-dev : -D
 `   `   `   --global : -g
+`   `   npm outdated : 업데이트 할 패키지 여부 확인
+`   `   `   current =/= wanted -> 업데이트 필요
+`   `   `   => npm update [Package]
+`   `   npm uninstall [Package] : 패키지 제거
+`   `   `   npm rm [Package] : ``
+`   `   npm search [검색] : npm 패키지 검색
+`   `   npm info [Package] : 패키지 세부 정보 파악
+`   `   npm adduser : 패키지 배포를 위한 npm 로그인 명령어
+`   `   `   npm whoami : 로그인한 사용자 알림 / 로그인 상태가 아닐 시 에러 발생
+`   `   `   npm logout : npm adduser로 로그인한 계정의 로그아웃
+`   `   npm version [version] : Package.json의 버전을 올림
+`   `   `   npm version major/minor/patch : 해당 부분의 숫자를 1 증가
