@@ -1,3 +1,12 @@
 `   npm web에서 sign up(회원가입)
 `   회원가입 confirm 메일 확인
 `   콘솔 - npm adduser (생성한 계정 로그인)
+
+`   npm은 패키지 이름 중복 허용 X
+`   중복 일므을 사용하고 싶다면 네임스페이스 사용
+`   중복 확인 : npm info [Package]
+`   `   => npm ERR! code 404 발생 시 중복 X
+
+`   배포한 패키지 삭제하기
+`   `   72시간 이상 지날 시 삭제 불가
+`   npm unpublish [Package] --force
