@@ -5,6 +5,23 @@ const app = express(); // express 모듈을 app 변수에 할당 : express 내�
 app.set('port', process.env.PORT || 3000); // app.set('port', 포트) => 서버 실행 포트 설정 : process.env 객체에 PORT 속성이 존재할 시 그 값 사용 / default 3000
 // 추후 데이터를 app.get(key)로 가져올 수 있음
 
+app.use((req, res, next)=>{
+    console.log('모든 요청에 다 실행됩니다.');
+    next();
+})
+
+app.get('/', (req, res, next)=>{
+    console.log('GET / 요청에서만 실행됩니다.');
+    next();
+}, (req, res)=>{
+    throw new Error('에러는 에러처리 미들웨어로 갑니다.')
+});
+
+app.use((err, req, res, next)=>{
+    console.error(err);
+    res.status(500).send(err.message);
+});
+
 app.get('/', (req, res)=>{ // app.get(주소, 라우터) : 주소에 대한 GET 요청 시 취할 동작
     // 매개변수 req : 요청관련 정보 포함 객체, res : 응답 관련 정보 포함 객체
     // 익스프레스에서는 res.write / res.end 대신 res.send 사용
