@@ -21,3 +21,13 @@
 `   `   서버 폴더 경로와 요청 경로가 다름 => 외부인이 서버의 구조를 쉽게 파악 불가 => 보안에 도움
 `   `   정적 파일을 알아서 제공 => fs.readFile 등으로 파일을 직접 읽어 전송할 필요 X
 `   `   요청 경로에 해당 파일 존재 X => 자동으로 내부적으로 next 호출, 파일 발견 시 다음 미들웨어 실행 X
+
+`   body-parser
+`   `   요청의 본문에 있는 데이터를 해석 -> req.body 객체로 만드는 미들웨어
+`   `   폼데이터, AJAX 요청의 데이터를 처리 / 멀티파트(이미지, 동영상, 파일) 데이터는 처리 불가 -> multer모듈 사용
+`   `   app.use(express.json())
+`   `   app.use(express.urlencoded({extended:false}));
+`   `   express에 body-parser 미들웨어의 일부 기능이 내장
+`   `   body-parser를 직접 설치하는 경우 npm i body-parser
+`   `   `   JSON, URL-encoded 형식 외에도 Raw(요청의 본문이 버퍼데이터), Text(텍스트 데이터 해석) 형식 데이터 추가 해석
+`   `   extended:false => querystring 모듈 사용해 쿼리스트링 해석, true => qs 모듈 (npm 패키지) 사용 쿼리스트링 해석
