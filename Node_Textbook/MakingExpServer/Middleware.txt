@@ -31,3 +31,17 @@
 `   `   body-parser를 직접 설치하는 경우 npm i body-parser
 `   `   `   JSON, URL-encoded 형식 외에도 Raw(요청의 본문이 버퍼데이터), Text(텍스트 데이터 해석) 형식 데이터 추가 해석
 `   `   extended:false => querystring 모듈 사용해 쿼리스트링 해석, true => qs 모듈 (npm 패키지) 사용 쿼리스트링 해석
+
+`   cookie-parser
+`   `   요청에 동봉된 쿠키를 해석해 req.cookies 객체로 만듦
+`   `   app.use(cookieParser(비밀키));
+`   `   유효 기간이 지난 쿠키의 경우 알아서 걸러냄
+`   `   첫 인수로 비밀 키 가능
+`   `   `   서명된 쿠키가 있는 경우 제공한 비밀 키를 통해 해당 쿠키가 내 서버가 만든 쿠키임을 검증
+`   `   `   서명이 붙은 쿠키의 형태 : name=cookieName.sign
+`   `   `   서명된 쿠키는 req.cookies 대신 req.signedCookies 객체에 들어있음
+`   `   쿠키의 생성 / 제거
+`   `   `   res.cookie / res.clearCookie 메소드 사용
+`   `   `   res.cookie(key, value, option) (쿠키 옵션은 기본 쿠키 옵션과 동일 : domain, expires, httpOnly, maxAge, path, secure 등)
+`   `   `   쿠키의 삭제 : 키, 값, 옵션 등 3가지가 정확히 일치해야 삭제됨 (expires, maxAge 제외)
+`   `   `   `   옵션 중 signed는 true로 설정 시 쿠키 뒤에 서명이 붙음
