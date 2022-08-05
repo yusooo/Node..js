@@ -45,3 +45,6 @@
 `   `   `   res.cookie(key, value, option) (쿠키 옵션은 기본 쿠키 옵션과 동일 : domain, expires, httpOnly, maxAge, path, secure 등)
 `   `   `   쿠키의 삭제 : 키, 값, 옵션 등 3가지가 정확히 일치해야 삭제됨 (expires, maxAge 제외)
 `   `   `   `   옵션 중 signed는 true로 설정 시 쿠키 뒤에 서명이 붙음
+
+`   express-session
+`   `   
