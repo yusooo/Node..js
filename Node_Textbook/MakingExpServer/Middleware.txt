@@ -63,4 +63,11 @@
 `   `   인수 : 세션에 대한 설정
 `   `   `   resave : 요청이 올 시 세션에 수정 사항이 없을 시 세션의 재저장 여부
 `   `   `   saveUninitialized : 세션에 저장 내역이 없더라도 처음부터 세션을 생성할지 설정
-`   `   
+`   `   세션 관리 시 클라이언트에 쿠키를 보냄 (세션 쿠키)
+`   `   `   안전한 쿠키의 전송 : 쿠키에 서명 추가 (secret 값 필요)
+`   `   `   cookie-parser secret과 같게 설정하는 것이 권장됨
+`   `   `   name 옵션으로 이름 설정 (default : connect.sid)
+`   `   `   cookie 옵션 : 세션 쿠키 관련 설정
+`   `   `   `   maxAge, domain, path, expires, sameSite, httpOnly, secure 등 일반적 쿠키 옵션이 모두 제공됨
+`   `   `   `   배포 시에는 https의 적용 및 secure: true 설정이 권장됨
+`   `   `   `   store : DB를 연결하여 세션을 유지 (보통 레디스가 자주 쓰임)
