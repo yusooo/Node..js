@@ -71,3 +71,9 @@
 `   `   `   `   maxAge, domain, path, expires, sameSite, httpOnly, secure 등 일반적 쿠키 옵션이 모두 제공됨
 `   `   `   `   배포 시에는 https의 적용 및 secure: true 설정이 권장됨
 `   `   `   `   store : DB를 연결하여 세션을 유지 (보통 레디스가 자주 쓰임)
+`   `   `   express-session으로 만들어진 req.session 객체에 값 대입 or 삭제 => 세션 변경 가능
+`   `   `   `   세션의 삭제를 한 번에 할 경우 req.session.destory 메소드 호출
+`   `   `   `   현재 세션의 아이디 확인 req.sessionID
+`   `   `   `   세션의 강제 저장 req.session.save (일반적으로 요청이 끝날 시 자동 호출 => 호출할 일 거의 X)
+`   `   `   `   express-session에서 서명한 경우 앞에 s:가 붙음 (실제로는 encodeURIComponent 함수 실행 => s%3A)
+`   `   `   `   s%3A 뒷부분은 실제 암호화된 쿠키 내용, s%3A가 붙은 경우 express-session 미들웨어에 의한 암호화로 생각
